@@ -1,13 +1,13 @@
 <template>
-    <div class="layout"></div>
+    <div class="layout">sdfsdfs</div>
 </template>
 
 
 <script>
-import {Sidebar,Navbar,AppMain} from '@/components'
+import { Sidebar, Navbar, AppMain } from '@/components'
 export default {
     name: 'Layout',
-    components:{
+    components: {
         Sidebar,
         Navbar,
         AppMain
