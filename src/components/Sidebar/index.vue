@@ -1,11 +1,13 @@
 <template>
     <div class="has-logo">
-        <p @click="goHome">
+        <p @click="goHome" class="system-title">
             <img src="../../assets/logo.png" alt="">
+            CMS页面配置系统
         </p>
         <el-menu :default-active="activeMenu" :collapse="true" background-color="#304156" text-color="#bfcbd9"
             active-text-color="#409eff" mode="vertical">
-            <SidebarItem></SidebarItem>
+            <SidebarItem v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path">
+            </SidebarItem>
         </el-menu>
     </div>
 </template>
@@ -37,3 +39,29 @@ export default {
     }
 }
 </script>
+
+<style lang="less" scoped>
+.menu-nodata {
+    padding-top: 25px;
+    color: #ccc;
+    text-align: center;
+    font-size: 14px;
+}
+
+.system-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+
+    img {
+        margin-right: 5px;
+        width: 50px;
+        height: 50px;
+    }
+}
+</style>

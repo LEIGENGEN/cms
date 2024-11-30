@@ -1,5 +1,6 @@
 <template>
-    <component :="linkProps(to)">
+    <!-- 这里不可以使用：= -->
+    <component v-bind="linkProps(to)">
         <slot></slot>
     </component>
 </template>
@@ -14,16 +15,6 @@ export default {
             required: true
         }
     },
-    data() {
-        return {
-
-        };
-    },
-
-    mounted() {
-
-    },
-
     methods: {
         linkProps(url) {
             // 判断当前链接是否为外部链接
